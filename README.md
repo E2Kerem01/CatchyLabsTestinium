@@ -31,3 +31,51 @@ Read more about [Step implementations in Java](http://getgauge.io/documentation/
 ```
 mvn test
 ```
+
+
+# 🚀 Gauge + Selenium + Maven Test Automation
+
+This is a template to get started with a **Gauge project** that uses **Selenium** for browser interactions and **Maven** for dependency management.
+
+## 📥 Installing Gauge & Required Plugins
+
+First, install **Gauge** and required dependencies:
+
+```sh
+gauge install java
+gauge install html-report
+gauge install screenshot
+
+mvn clean install
+
+/CatchylabsTest
+│── /specs            # Specification files (Gauge scenarios)
+│── /src/main/java
+│   │── /pages        # Page Objects (Selenium)
+│   │── /utils        # Helper functions (WebDriver, Config, etc.)
+│── /src/test/java
+│   │── /stepDefinitions  # Gauge step implementations
+│── pom.xml           # Maven dependencies
+│── README.md         # Project documentation
+│── reports/          # Test execution reports (Gauge HTML)
+
+
+
+ Run Tests & Generate HTML Reports
+
+gauge run specs --html-report
+reports/html-report/index.html
+gauge run specs --clean
+gauge run specs --html-report
+{your_project_directory}/reports/html-report/index.html
+
+
+Bu **README.md** dosyasıyla:
+✅ **Gauge testlerini çalıştırabilir**,  
+✅ **Raporları görüntüleyebilir**,  
+✅ **Eski test raporlarını temizleyebilir** ve  
+✅ **Karşılaşabileceğin yaygın sorunları giderebilirsin**.
+
+
+
+![img.png](img.png)
