@@ -1,3 +1,12 @@
+
+# 🚀 Gauge + Selenium + Maven Test Automation
+
+This is a template to get started with a **Gauge project** that uses **Selenium** for browser interactions and **Maven** for dependency management.
+
+## 📥 Installing Gauge & Required Plugins
+
+First, install **Gauge** and required dependencies:
+
 ## About this template
 
 This is a template to get started with a Gauge project that uses Selenium as the utils to interact with a web browser.
@@ -22,7 +31,7 @@ This is where the java implementation of the steps would be implemented. Since t
 _We recommend considering modelling your tests using the [Page Object](https://github.com/SeleniumHQ/selenium/wiki/PageObjects) pattern, and the [Webdriver support](https://github.com/SeleniumHQ/selenium/wiki/PageFactory) for creating them._
 
 - Note that every Gauge step implementation is annotated with a `Step` attribute that takes the Step text pattern as a parameter.
-Read more about [Step implementations in Java](http://getgauge.io/documentation/user/current/test_code/java/java.html)
+  Read more about [Step implementations in Java](http://getgauge.io/documentation/user/current/test_code/java/java.html)
 
 ### Execution
 
@@ -32,14 +41,6 @@ Read more about [Step implementations in Java](http://getgauge.io/documentation/
 mvn test
 ```
 
-
-# 🚀 Gauge + Selenium + Maven Test Automation
-
-This is a template to get started with a **Gauge project** that uses **Selenium** for browser interactions and **Maven** for dependency management.
-
-## 📥 Installing Gauge & Required Plugins
-
-First, install **Gauge** and required dependencies:
 
 ```sh
 gauge install java
