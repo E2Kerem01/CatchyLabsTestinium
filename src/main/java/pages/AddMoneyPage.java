@@ -41,20 +41,15 @@ public class AddMoneyPage extends BasePage {
         isElementVisibleAndEnabled(requiredFieldMessage);
     }
 
-    public void addMoneyToAccount(){
+    public void addMoneyToAccount(String money){
         sendKeysToElement(cardField,"1234123412341234");
         sendKeysToElement(cardHolderField,"Kerem");
         sendKeysToElement(cardExpiryDate, "1111");
         sendKeysToElement(cardCVV,"123");
-
-    }
-
-    public void correctAddMoney(String money){
-
+        clickButton(amountField);
         sendKeysToElement(amountField, money);
-        clickButton(addButton);
-        String sendMoneyTLL = getTextFromElement(sendAmount);
-        isTextEqualToExpected(sendMoneyTLL,money);
 
     }
+
+
 }

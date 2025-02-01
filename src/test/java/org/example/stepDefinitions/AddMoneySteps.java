@@ -26,9 +26,11 @@ public class AddMoneySteps {
     public void addMoneyToAccount(String money) throws InterruptedException {
         addMoneyPage.AddMoneyPageButton();
         addMoneyPage.checkAddMoneyArea();
+        addMoneyPage.clickAddMoneyButton();
         addMoneyPage.checkRequiredFieldMessage();
-        addMoneyPage.addMoneyToAccount();
-        addMoneyPage.correctAddMoney(money);
+
+        addMoneyPage.addMoneyToAccount(money);
+
 
         Thread.sleep(1000000);
     }
