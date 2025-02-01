@@ -6,19 +6,22 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Tag;
+
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import pages.LoginPage;
 import utils.BaseTest;
 
 public class LoginSteps {
 
+    private static final Logger log = LoggerFactory.getLogger(LoginSteps.class);
     private LoginPage loginPage;
 
     public LoginSteps() {
         this.loginPage = new LoginPage(BaseTest.getDriver());
     }
+
 
     @Test
     @Description("Kullanici giris ekranina gidip, username alaninin erisilebilir olup olmadıgını kontrol eder.")
@@ -57,6 +60,27 @@ public class LoginSteps {
     public void controlLoginButtonWithOpenMoney() throws InterruptedException {
         Allure.step("Başarılı login sonrası Open Money butonun geldiği görülür.");
         loginPage.isOpenMoneyButtonVisibleAndEnabled();
-        //Thread.sleep(50000);
+
     }
+
+    @Test
+    @Description("Yanlış username ve şifre ile giriş yapılarak login kontrol yapılır.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Step("Başarısız login sonrası hata mesajının geldiği görülür.")
+    public void failLoginControl(){
+        Allure.step("Başarısız login sonrası hata mesajının geldiği görülür.");
+        Assertions.assertFalse(loginPage.isFailLoginExceptionVisibleAndEnabled(),
+                "Başarısız login sonrası hata mesajının gelmesi bekleniyordu.");
+
+    }
+
+    @Test
+    @Step("Open Money butonuna tıklanır.")
+    public void clickOpenMoneyButton() throws InterruptedException {
+        loginPage.isOpenMoneyButtonVisibleAndEnabled();
+        loginPage.clickOpenMoney();
+
+    }
+
+
 }
