@@ -15,7 +15,7 @@ import java.io.ByteArrayInputStream;
 
 public class BaseTest {
     private static WebDriver driver;
-    protected LoginPage loginPage;
+    private  LoginPage loginPage;
 
     @BeforeSuite
     public void setUpSuite() {

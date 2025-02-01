@@ -6,7 +6,6 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.Assertions;
-
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -69,7 +68,7 @@ public class LoginSteps {
     @Step("Başarısız login sonrası hata mesajının geldiği görülür.")
     public void failLoginControl(){
         Allure.step("Başarısız login sonrası hata mesajının geldiği görülür.");
-        Assertions.assertFalse(loginPage.isFailLoginExceptionVisibleAndEnabled(),
+        Assertions.assertTrue(loginPage.isFailLoginExceptionVisibleAndEnabled(),
                 "Başarısız login sonrası hata mesajının gelmesi bekleniyordu.");
 
     }
@@ -81,6 +80,5 @@ public class LoginSteps {
         loginPage.clickOpenMoney();
 
     }
-
 
 }
